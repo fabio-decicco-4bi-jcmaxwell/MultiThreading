@@ -1,7 +1,7 @@
 
 package multithread;
-import static java.lang.Math.random;
-import java.util.Random;
+import static java.lang.Math.random;//importo classe random;
+import java.util.Random;//importo classe random;
 import java.util.concurrent.TimeUnit;
 import static multithread.TicTacToe.punteggio;
 /**
@@ -16,9 +16,9 @@ public class MultiThread {
         long start = System.currentTimeMillis();
         
         
-        Thread tic = new Thread (new TicTacToe("TIC"));
-        Thread tac = new Thread (new TicTacToe("TAC"));
-        Thread toe = new Thread (new TicTacToe("TOE"));
+        Thread tic = new Thread (new TicTacToe("TIC"));//creazione thread con nome tic;
+        Thread tac = new Thread (new TicTacToe("TAC"));//creazione thread con nome tac;
+        Thread toe = new Thread (new TicTacToe("TOE"));//creazione thread con nome toe;
         tic.start();
         tac.start();
         toe.start();
@@ -47,7 +47,7 @@ class TicTacToe implements Runnable {
     public TicTacToe (String g) {
     this.t = g;
     }
-    @Override
+    @Override //sovrascrivo metodo già preso dalla classe 
     public void run(){
          for(int i = 10; i>0; i--){
              if("TAC".equals(t))
@@ -63,13 +63,13 @@ class TicTacToe implements Runnable {
              msg = "<" + t + "> ";
             //ricerca possibile eccezione;
              try {
-                 TimeUnit.MILLISECONDS.sleep(tempo);
+                 TimeUnit.MILLISECONDS.sleep(tempo);// blocco del thread;
              }
              catch (InterruptedException e){
              }
              if("TOE".equals(t)&& conf == true)
              {
-                 punteggio++;
+                 punteggio++; //incremento
              }
              else
              {
