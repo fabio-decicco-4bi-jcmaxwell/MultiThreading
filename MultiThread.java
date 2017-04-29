@@ -3,7 +3,7 @@ package multithread;
 import static java.lang.Math.random;//importo classe random;
 import java.util.Random;//importo classe random;
 import java.util.concurrent.TimeUnit;
-import static multithread.TicTacToe.punteggio;
+import static multithread.TicTacToe.punteggio;//importi variabuile statica punteggio della classe tictactoe
 /**
  *
  * @author Fabio De Cicco
@@ -19,16 +19,16 @@ public class MultiThread {
         Thread tic = new Thread (new TicTacToe("TIC"));//creazione thread con nome tic;
         Thread tac = new Thread (new TicTacToe("TAC"));//creazione thread con nome tac;
         Thread toe = new Thread (new TicTacToe("TOE"));//creazione thread con nome toe;
-        tic.start();
-        tac.start();
-        toe.start();
+        tic.start();//faccio partire il thread
+        tac.start();//faccio partire il thread
+        toe.start();//faccio partire il thread
         
         try {
-        tic.join();
-        tac.join();
-        toe.join();
+        tic.join();//ferma l'esecuzione del programma e continua quando tic ha finito 
+        tac.join();//ferma l'esecuzione del programma e continua quando tac ha finito 
+        toe.join();//ferma l'esecuzione del programma e continua quando toe ha finito 
         }
-        catch (InterruptedException e) {    
+        catch (InterruptedException e) {    //possibil sospensione del thread 
         }
         System.out.println("Punteggio = " + punteggio);
         long end = System.currentTimeMillis();
@@ -40,10 +40,10 @@ public class MultiThread {
 class TicTacToe implements Runnable {
     
     
-    private String t;
-    private String msg;
-    public static boolean conf = false;
-    public static int punteggio = 0;
+    private String t; // variabile di tipo stringa;
+    private String msg;// variabile di tipo stringa;
+    public static boolean conf = false;//variabile statica booleana;
+    public static int punteggio = 0;//valore statico intero inizializzato a 0;
     public TicTacToe (String g) {
     this.t = g;
     }
@@ -63,11 +63,11 @@ class TicTacToe implements Runnable {
              msg = "<" + t + "> ";
             //ricerca possibile eccezione;
              try {
-                 TimeUnit.MILLISECONDS.sleep(tempo);// blocco del thread;
+                 TimeUnit.MILLISECONDS.sleep(tempo);// attesa tempo casuale
              }
-             catch (InterruptedException e){
+             catch (InterruptedException e){//cattura eccezione
              }
-             if("TOE".equals(t)&& conf == true)
+             if("TOE".equals(t)&& conf == true)//paragone, in caso di interruzione;
              {
                  punteggio++; //incremento
              }
