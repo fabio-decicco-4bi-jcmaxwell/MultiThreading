@@ -1,13 +1,9 @@
-# MultiThreading
-JAVA Mutithreading per le classi 4te
+# TICTACTOE
 
-Con questo progetto vorrei introdurre gli allievi delle 4te ai concetti di Programmazione Concorrente
+In questo progetto si è concentrata la maggior parte del lavoro sul capire cos'è e come si usa il threading.
+##svolgimento programma
 
-## Cos'e' la con-correnza?
-e' il verificarsi di eventi allo stesso tempo (contemporaneamente)
-
-Pensiamo alla vita delle persone:
-* piu' persone vivono nello stesso giorno
+*prima di ogni altra cosa nella procedura del programma ho acquisito le librerie per 
 * ogni persona puo' fare piu' cose allo stesso tempo (es. studiare, ascoltare musica e giocare ad un videogioco...)
 * in un bar affollato ci sono diversi baristi per smaltire la folla che vuole il caffe'
 * mentre un ufficio svolge una pratica un altro ufficio ne svolge un'altra (non in Italia... dove nessun ufficio svolge qualcosa)
