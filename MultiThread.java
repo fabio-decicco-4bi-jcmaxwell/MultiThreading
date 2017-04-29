@@ -61,6 +61,7 @@ class TicTacToe implements Runnable {
              int tempo = rand.nextInt(n)+j;
              
              msg = "<" + t + "> ";
+            //ricerca possibile eccezione;
              try {
                  TimeUnit.MILLISECONDS.sleep(tempo);
              }
@@ -75,7 +76,7 @@ class TicTacToe implements Runnable {
                  conf = false;
              }
              msg += t + ":"+i;
-             System.out.println(msg);
+             System.out.println(msg);//stampa messaggio finale;
          }
     }
 }
