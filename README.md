@@ -2,7 +2,7 @@
 # TICTACTOE
 
 In questo progetto essenzialmente lo scopo finale è : capire  cos'è e come si usa il threading.
-## funzonalità del programma
+## funzonalità del programm
 1 avviamento dei tre threads (TIC-TAC-TOE)
 <br>
 2 TIC TAC TOE vengono eseguiti con leggero ritardo una dall'alltro.
@@ -12,3 +12,5 @@ In questo progetto essenzialmente lo scopo finale è : capire  cos'è e come si 
 <br>
 5 infine viene visualizzato il numero di volte che TOE appare dopo il TAC.( visto che sarà ogni volta un tempo casuale il risultato può venire di verso per tutti.)
 
+6 esercizio 2:
+per evitare conflitti sono stati aggiunti il Monitor e i metodi presenti ma anche per avere mamaggiore precisione.
