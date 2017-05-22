@@ -1,24 +1,24 @@
 package multithread;
 
-import static java.lang.Math.random;                                            //Importazione classe Random
-import java.util.Random;
+import static java.lang.Math.random;                                            //Importazione del metodo Random
+import java.util.Random;                                                        
 import java.util.concurrent.TimeUnit;
 
-public class MultiThread {
+public class MultiThread {                                                      //crezione della classe
     
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Main Thread iniziata...");
         long start = System.currentTimeMillis();
         Schermo m = new Schermo();
-        Thread tic = new Thread(new TicTacToe("TIC", m));                 //Creazione dei thread
-        Thread tac = new Thread(new TicTacToe("TAC", m));
-        Thread toe = new Thread(new TicTacToe("TOE", m));
-        tic.start();                                                            //Avvio dei thread
-        tac.start();
-        toe.start();
+        Thread tic = new Thread(new TicTacToe("TIC", m));                 //Creazione del thread con nome tic
+        Thread tac = new Thread(new TicTacToe("TAC", m));                 //Creazione del thread con nome tac
+        Thread toe = new Thread(new TicTacToe("TOE", m));                 //Creazione del thread con nome toe
+        tic.start();                                                            //Avvio del thread tic
+        tac.start();                                                            //Avvio del thread tac
+        toe.start();                                                            //Avvio del thread toe
 
         try {
-            tic.join();                                                         //Aspetta che i thread finiscano la loro esecuzione
+            tic.join();                                                         //Aspetta che i thread finiscano la l'esecuzione
             tac.join();
             toe.join();
         } 
@@ -30,7 +30,7 @@ public class MultiThread {
     }
 }
 
-class TicTacToe implements Runnable {                                           //Classe dei thread
+class TicTacToe implements Runnable {                                           //la classe dei thread
     private String nome;
     private String msg;
     Schermo m;
@@ -39,21 +39,21 @@ class TicTacToe implements Runnable {                                           
         this.nome = n;
         this.m = m;
     }
-    @Override                                                                   //Annotazione per il compilatore
-    public void run() {                                                         //Istruzioni eseguite dal threrad quando è in funzione
+    @Override                                                                   //operazione di riscrittura di un metodo ereditato
+    public void run() {                                                     
         for (int i = 10; i > 0; i--) {
             Random rand = new Random();                                         //Creazione di un numero casuale
             int j = 100;
             int n = 300-j;
             int tempo = rand.nextInt(n)+j;
-            m.Punteggio(nome, msg, tempo);                  //Richiama il metodo synchronized
+            m.Punteggio(nome, msg, tempo);                                      //Richiama il metodo synchronized
             msg = "<" + nome + "> " + nome + ": " + i;
             System.out.println(msg);
         }
     } 
 }
 
-class Schermo {                                                                 //Classe del monitor
+class Schermo {                                                                //Classe dello schermo
     String ultimo = " ";                                                      //Ultimo thread visualizzato dal metodo condiviso synchronized
     int punteggio = 0;                                                      //Punteggio del metodo condiviso synchronized
     
@@ -65,7 +65,7 @@ class Schermo {                                                                 
         msg += ": " + tempo + " :";
         if( thread.equals("TOE") && ultimo.equals("TAC"))                     //Controlla quando TAC viene prima di TIC 
         {                       
-            punteggio ++;                                                    //Se si verifica la condizione aggiorna il punteggio
+            punteggio ++;                                                    // aggiorna il punteggio se è vero
         }
         try {
             TimeUnit.MILLISECONDS.sleep(tempo);                                 //Thread in pausa per un tempo casuale
