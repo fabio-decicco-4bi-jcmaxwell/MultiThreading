@@ -24,7 +24,7 @@ public class MultiThread {                                                      
         } 
         catch (InterruptedException e) {    
         }
-        System.out.println("PunteggioSync = " + m.getPunteggio());    //Stampa il punteggio del metodo synchronized
+        System.out.println("Punteggio = " + m.getPunteggio());    //Stampa il punteggio del metodo synchronized
         long end = System.currentTimeMillis();
         System.out.println("Main Thread completata! tempo di esecuzione: " + (end - start) + "ms");  
     }
