@@ -13,4 +13,4 @@ In questo progetto essenzialmente lo scopo finale è : capire  cos'è e come si 
 5 infine viene visualizzato il numero di volte che TOE appare dopo il TAC.( visto che sarà ogni volta un tempo casuale il risultato può venire di verso per tutti.)
 
 6 esercizio 2:
-per evitare conflitti sono stati aggiunti il Monitor e i metodi presenti ma anche per avere mamaggiore precisione.
+per evitare conflitti e aumentare l'accuratezza abbiamo preso l'esercizio 1 e aggiunto Monitor e alcuni metodi.
